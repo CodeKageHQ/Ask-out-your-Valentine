@@ -38,7 +38,7 @@ No additional setup is required, as Tailwind CSS is included via CDN and JavaScr
 
 ## Contributions
 
-Feel the love? Contributions are welcome! Whether it's a new GIF suggestion, design improvements, or code optimization, feel free to fork the repository and submit a pull request.
+Feel the love? Contributions are welcome! Whether it's a new GIF suggestion, design improvements, or code optimisation, feel free to fork the repository and submit a pull request.
 
 ## License
 
