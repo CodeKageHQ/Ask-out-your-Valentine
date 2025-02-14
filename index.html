@@ -7,7 +7,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .gradient-background {
-      background: rgb(255, 208, 229);
       background: linear-gradient(180deg, rgba(255, 208, 229, 1) 0%, rgba(255, 232, 242, 1) 36%, rgba(255, 255, 255, 1) 100%);
     }
 
@@ -26,20 +25,24 @@
         transform: translateY(-10px);
       }
     }
+
+    .moving-button {
+      position: absolute;
+    }
   </style>
 </head>
 <body class="gradient-background">
-  <div class="flex items-center justify-center h-screen">
+  <div class="flex items-center justify-center h-screen relative">
     <div class="flex flex-col items-center p-4">
       <img id="imageDisplay" src="./images/image1.gif" alt="Cute kitten with flowers" class="rounded-md h-[300px]" style="object-fit: cover;" />
-      <h2 id="valentineQuestion" class="text-4xl font-bold italic text-[#bd1e59] my-4">Will you be my Valentine?</h2>
-      <div class="flex gap-4 pt-[20px] items-center" id="responseButtons">
+      <h2 id="valentineQuestion" class="text-4xl font-bold italic text-[#bd1e59] my-4">Will you be my Valentine love?</h2>
+      <div class="flex gap-4 pt-[20px] items-center relative" id="responseButtons">
         <button id="yesButton"
           class="bounce2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-[20px] font-medium disabled:pointer-events-none disabled:opacity-50 hover:bg-green-400 min-h-12 min-w-[75px] px-4 py-2 bg-green-500 text-white transition">
           Yes
         </button>
         <button id="noButton"
-          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-[20px] font-medium transition disabled:pointer-events-none disabled:opacity-50 hover:bg-red-700 h-12 min-w-[75px] w-auto px-4 py-2 bg-red-500 text-white">
+          class="moving-button inline-flex items-center justify-center whitespace-nowrap rounded-md text-[20px] font-medium transition disabled:pointer-events-none disabled:opacity-50 hover:bg-red-700 h-12 min-w-[75px] w-auto px-4 py-2 bg-red-500 text-white">
           No
         </button>
       </div>
@@ -48,16 +51,18 @@
 
   <script type="module">
     import confetti from 'https://cdn.skypack.dev/canvas-confetti';
+
     const yesButton = document.getElementById('yesButton');
     const noButton = document.getElementById('noButton');
     const imageDisplay = document.getElementById('imageDisplay');
     const valentineQuestion = document.getElementById('valentineQuestion');
     const responseButtons = document.getElementById('responseButtons');
-  
+
     let noClickCount = 0;
-    let buttonHeight = 48; // Starting height in pixels
+    let buttonHeight = 48;
     let buttonWidth = 80;
-    let fontSize = 20; // Starting font size in pixels
+    let fontSize = 20;
+
     const imagePaths = [
       "./images/image1.gif",
       "./images/image2.gif",
@@ -67,29 +72,42 @@
       "./images/image6.gif",
       "./images/image7.gif"
     ];
-  
+
+    function moveNoButton() {
+      const maxX = window.innerWidth - noButton.offsetWidth - 20;
+      const maxY = window.innerHeight - noButton.offsetHeight - 20;
+      const newX = Math.random() * maxX;
+      const newY = Math.random() * maxY;
+
+      noButton.style.transform = `translate(${newX}px, ${newY}px)`;
+    }
+
     noButton.addEventListener('click', function() {
       if (noClickCount < 5) {
         noClickCount++;
         imageDisplay.src = imagePaths[noClickCount];
-        buttonHeight += 35; // Increase height by 5px on each click
+
+        buttonHeight += 35;
         buttonWidth += 35;
-        fontSize += 25; // Increase font size by 1px on each click
-        yesButton.style.height = `${buttonHeight}px`; // Update button height
+        fontSize += 25;
+        yesButton.style.height = `${buttonHeight}px`;
         yesButton.style.width = `${buttonWidth}px`;
-        yesButton.style.fontSize = `${fontSize}px`; // Update font size
+        yesButton.style.fontSize = `${fontSize}px`;
+
         if (noClickCount < 6) {
-          noButton.textContent = ["No", "Are you sure?", "Pookie please", "Don't do this to me :(", "You're breaking my heart", "I'm gonna cry..."][noClickCount];
+          noButton.textContent = ["wag madam", "love", "madam please", "sad na tuloy ako :(", "look o madam I'm sad na", "loveeee"][noClickCount];
         }
+
+        moveNoButton();
       }
     });
-  
+
     yesButton.addEventListener('click', () => {
-      imageDisplay.src = './images/image7.gif'; // Change to image7.gif
-      valentineQuestion.textContent = "Yayyy!! :3"; // Change the question text
-      responseButtons.style.display = 'none'; // Hide both buttons
-      confetti(); // Trigger confetti animation
+      imageDisplay.src = './images/image7.gif';
+      valentineQuestion.textContent = "Yayyy!! :3, ito kiss madam bente";
+      responseButtons.style.display = 'none';
+      confetti();
     });
-  </script>  
+  </script>
 </body>
 </html>
