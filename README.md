@@ -4,7 +4,7 @@ Thank you to [@mewtru](https://instagram.com/mewtru) for the video idea!
 
 This code was completely created from scratch! utilising Tailwind CSS!
 
-Make this Valentine's Day unforgettable with a charming and interactive web experience. This website allows you to ask the big question, "Will you be my Valentine?" in a unique and playful manner. With cute GIFs that change with responses and dynamic "Yes" and "No" buttons, it's designed to bring a smile and possibly a "Yes!" to someone special.
+Make this Valentine's Day unforgettable with a charming and interactive web experience. This website allows you to ask the big question, "Will you be my Valentine, Bhavna? ❤️" in a unique and playful manner. With cute GIFs that change with responses and dynamic "Yes" and "No" buttons, it's designed to bring a smile and possibly a "Yes!" to someone special.
 
 ## Features
 
@@ -15,7 +15,7 @@ Make this Valentine's Day unforgettable with a charming and interactive web expe
 
 ## How It Works
 
-- The user is greeted with a cute GIF and the question "Will you be my Valentine?".
+- The user is greeted with a cute GIF and the question "Will you be my Valentine, Bhavna? ❤️".
 - Responding "No" changes the GIF and modifies the size and text of the buttons, adding a playful element to convince the user to reconsider.
 - A "Yes" click celebrates the moment with a special GIF and triggers a confetti animation, hiding the response buttons.
 
@@ -44,4 +44,4 @@ Feel the love? Contributions are welcome! Whether it's a new GIF suggestion, des
 
 This project is open source and available under [MIT License](LICENSE).
 
-Happy Valentine's Day! Let's spread the love ❤️.
+Yay! I love you, Bhavna!.
