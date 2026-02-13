@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="A cute Valentine's Day page to ask someone to be your Valentine!">
   <meta name="theme-color" content="#ffd0e5">
-  <title>Valentine's Day</title>
+  <title>San Valentin</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
   <style>
@@ -49,14 +49,14 @@
         class="rounded-md h-[300px] object-cover"
       />
       <h1 id="valentineQuestion" class="text-4xl font-bold italic text-[#bd1e59] my-4">
-        Will you be my Valentine?
+        ¿Quieres ser mi San Valentin?
       </h1>
       <div id="responseButtons" class="flex gap-4 pt-5 items-center">
         <button
           id="yesButton"
           class="bounce inline-flex items-center justify-center whitespace-nowrap rounded-md text-xl font-medium cursor-pointer px-4 py-2 bg-green-500 text-white transition-all duration-300 ease-in-out hover:bg-green-400 min-h-12 min-w-[75px]"
         >
-          Yes
+          Si
         </button>
         <button
           id="noButton"
@@ -93,12 +93,11 @@
       ];
 
       const NO_BUTTON_MESSAGES = [
-        'No',
-        'Are you sure?',
-        'Pookie please',
-        "Don't do this to me :(",
-        "You're breaking my heart",
-        "I'm gonna cry...",
+        'No'',
+        'Estas segura?',
+        "No me hagas esto🥺",
+        "Ya no amas a tu amorcito",
+        "Voy a llorar...",
       ];
 
       const ALT_TEXTS = [
@@ -142,7 +141,7 @@
       yesButton.addEventListener('click', () => {
         imageDisplay.src = IMAGE_PATHS[IMAGE_PATHS.length - 1];
         imageDisplay.alt = ALT_TEXTS[ALT_TEXTS.length - 1];
-        valentineQuestion.textContent = 'Yayyy!! :3';
+        valentineQuestion.textContent = 'SHIIIII, TE AMOOOOO💜💜💜';
         responseButtons.style.display = 'none';
 
         // Heart-shaped confetti for a valentine theme
@@ -160,3 +159,4 @@
   </script>
 </body>
 </html>
+
